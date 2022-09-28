@@ -1,0 +1,14 @@
+from typing import List
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        for i, value in enumerate(nums):
+            r = target - value
+            if r in d:
+                return [d[r], i]
+            d[value] = i
+
+if __name__ == '__main__':
+    print(Solution().twoSum([1,2,3],5))
